@@ -22,9 +22,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res, next) => {
-  res.sendFile(`${publicPath}/index.html`);
-});
+
 
 app.get("/spotyapp/:client_id/:client_secret", (req, res, next) => {
   const client_id = req.params.client_id;
@@ -53,6 +51,10 @@ app.get("/spotyapp/:client_id/:client_secret", (req, res, next) => {
     }
     res.json(body);
   });
+});
+
+app.get("/", (req, res, next) => {
+  res.sendFile(`${publicPath}/index.html`);
 });
 
 app.listen(port, () => console.log(`Ready ${port}`));
