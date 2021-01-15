@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res, next) => {
-  res.sendFile(`${publicPath}/info.html`);
+  res.sendFile(`${publicPath}/index.html`);
 });
 
 app.get("/spotyapp/:client_id/:client_secret", (req, res, next) => {
