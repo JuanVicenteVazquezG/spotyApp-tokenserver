@@ -29,7 +29,7 @@ app.get("/", (req, res, next) => {
 app.get("/spotyapp/:client_id/:client_secret", (req, res, next) => {
   const client_id = req.params.client_id;
   const client_secret = req.params.client_secret;
-  const spotifyUrl = 'https://accounts.spotify.com/api/token';
+  const spotifyUrl = "https://accounts.spotify.com/api/token";
   const authOptions = {
     url: spotifyUrl,
     headers: {
@@ -51,9 +51,8 @@ app.get("/spotyapp/:client_id/:client_secret", (req, res, next) => {
         err,
       });
     }
-
     res.json(body);
   });
 });
 
-app.listen(port, () => console.log(`Ready`));
+app.listen(port, () => console.log(`Ready ${port}`));
