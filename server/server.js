@@ -56,6 +56,6 @@ app.get("/", (req, res, next) => {
 });
 
 app.listen(port, (error) => {
-  if (err) throw new Error(err);
-  console.log(`Server Ready on ${port}`);
+  if (error) throw new Error(err);
+  console.log(`Server Ready on port ${port}`);
 });
