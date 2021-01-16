@@ -22,8 +22,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
 app.get("/spotyapp/:client_id/:client_secret", (req, res, next) => {
   const client_id = req.params.client_id;
   const client_secret = req.params.client_secret;
@@ -57,4 +55,7 @@ app.get("/", (req, res, next) => {
   res.sendFile(`${publicPath}/index.html`);
 });
 
-app.listen(port, () => console.log(`Ready ${port}`));
+app.listen(port, (error) => {
+  if (err) throw new Error(err);
+  console.log(`Server Ready on ${port}`);
+});
